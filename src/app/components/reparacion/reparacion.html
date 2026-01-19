@@ -1,0 +1,46 @@
+<section class="reparacion-page">
+  <div class="hero-service">
+    <div class="hero-content">
+      <span class="brand-tag">IPCONFIG SOLUTIONS</span>
+      <h1>Reparación y Soporte Técnico</h1>
+    </div>
+  </div>
+
+  <div class="custom-slider-container">
+    <div class="slider-layout-grid">
+      
+      <div class="text-panel">
+        <span class="slide-num">01</span>
+        <h2 class="title">Mantenimiento <span>Preventivo</span></h2>
+        <p class="description">Limpieza física profunda y cambio de pasta térmica de alto rendimiento.</p>
+        <button class="cta-button">Solicitar Soporte</button>
+      </div>
+
+      <div class="image-slider-wrapper">
+        <button class="nav-arrow prev" (click)="move(-1)">←</button>
+        
+        <div class="image-card" #slider (scroll)="onScroll($event)">
+          <div class="slides-track">
+            <div class="slide">
+              <img src="/img/a3.jpeg" alt="Soporte">
+              <span class="badge-pro">PRO</span>
+            </div>
+            <div class="slide">
+              <img src="/img/ipconfig2.png" alt="Soporte">
+              <span class="badge-pro">ADVANCED</span>
+            </div>
+          </div>
+
+          <div class="segmented-progress">
+            <div class="segment" [class.active]="currentSlide === 0"></div>
+            <div class="segment" [class.active]="currentSlide === 1"></div>
+            
+          </div>
+        </div>
+
+        <button class="nav-arrow next" (click)="move(1)">→</button>
+      </div>
+
+    </div>
+  </div>
+</section>

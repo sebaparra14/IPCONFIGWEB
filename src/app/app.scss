@@ -1,0 +1,6 @@
+main {
+  // Ajusta este valor según la altura de tu navbar (ejemplo: 80px)
+  padding-top: 90px; 
+  min-height: calc(100vh - 160px); // Asegura que el contenido ocupe la pantalla
+  display: block;
+}

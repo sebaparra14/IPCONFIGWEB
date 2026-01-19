@@ -1,0 +1,154 @@
+@use "sass:color";
+
+// Paleta de colores solicitada
+$amarillo: #ffdd00;
+$negro: #121212;
+$blanco: #ffffff;
+$azul-fondo: #0a192f; // Fondo base para el degradado translúcido
+
+.reparacion-page {
+  // Fondo translúcido con gradiente radial profundo
+  background: radial-gradient(circle at 50% 50%, rgba(26, 65, 205, 0.4), $azul-fondo);
+  min-height: 100vh;
+  color: $blanco;
+  padding-bottom: 50px;
+}
+
+.hero-service {
+  padding: 40px 8%;
+  .brand-tag { color: $amarillo; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; }
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-top: 10px; }
+}
+
+.custom-slider-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.slider-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+// PANEL DE TEXTO
+.text-panel {
+  .slide-num { font-size: 5rem; font-weight: 900; opacity: 0.1; line-height: 1; }
+  .title { 
+    font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 800; margin: -20px 0 20px;
+    span { color: $amarillo; }
+  }
+  .description { font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px; }
+  
+  .cta-button {
+    background: $blanco;
+    color: $negro;
+    padding: 16px 40px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover { background: $amarillo; transform: translateY(-3px); }
+  }
+}
+
+// CONTENEDOR DE IMAGEN Y BOTONES (Responsive & Posicionamiento)
+.image-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .image-card {
+    width: 100%;
+    height: 500px;
+    background: rgba($blanco, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 40px;
+    border: 1px solid rgba($blanco, 0.2);
+    overflow: hidden;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    display: flex;
+    &::-webkit-scrollbar { display: none; }
+
+    @media (max-width: 768px) { height: 350px; }
+  }
+
+  .slides-track { display: flex; width: 100%; height: 100%; }
+  
+  .slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    height: 100%;
+    position: relative;
+    img { width: 100%; height: 100%; object-fit: cover; }
+    .dark-slide-content { 
+      height: 100%; background: $negro; display: grid; place-items: center; font-size: 8rem; 
+    }
+  }
+}
+
+// BOTONES DE NAVEGACIÓN (Ubicación exacta según tu edición)
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: $blanco;
+  color: $negro;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+
+  &:hover { background: $amarillo; transform: translateY(-50%) scale(1.1); }
+
+  &.prev { left: -25px; } // Sobresale a la izquierda de la tarjeta
+  &.next { right: -25px; } // Sobresale a la derecha de la tarjeta
+
+  @media (max-width: 576px) {
+    width: 40px; height: 40px;
+    &.prev { left: 10px; } // En móviles pequeños se meten dentro de la tarjeta
+    &.next { right: 10px; }
+  }
+}
+
+// RAYA SEGMENTADA Y BADGE
+.segmented-progress {
+  position: absolute;
+  bottom: 25px;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  gap: 10px;
+  .segment {
+    flex: 1; height: 4px; background: rgba($blanco, 0.3); border-radius: 10px;
+    &.active { background: $blanco; box-shadow: 0 0 10px $blanco; }
+  }
+}
+
+.badge-pro {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: $amarillo;
+  color: $negro;
+  padding: 6px 15px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.7rem;
+}

@@ -1,0 +1,41 @@
+<nav class="nav" [class.nav--hidden]="navOculto">
+  <div class="nav__container">
+    
+    <div class="logo-section" routerLink="/" (click)="cerrarMenu()">
+      <img src="/img/logoip2.png" alt="IPCONFIG Logo" class="logo__img">
+    </div>
+
+    <ul class="nav__links" [class.nav__links--active]="menuAbierto">
+      <li>
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="cerrarMenu()">Inicio</a>
+      </li>
+      <li>
+        <a routerLink="/nosotros" routerLinkActive="active-link" (click)="cerrarMenu()">Nosotros</a>
+      </li>
+
+      <li class="dropdown" (mouseenter)="mostrarDropdown()" (mouseleave)="ocultarDropdown()">
+        <a class="dropdown__title" (click)="dropdownAbierto = !dropdownAbierto">
+          Servicios <span class="arrow">▾</span>
+        </a>
+        <ul class="dropdown__menu" [class.show]="dropdownAbierto">
+          <li><a routerLink="/reparacion" (click)="cerrarMenu()">Reparación</a></li>
+          <li><a routerLink="/camaras" (click)="cerrarMenu()">Cámaras</a></li>
+          <li><a routerLink="/programas" (click)="cerrarMenu()">Programas</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a routerLink="/proyectos" routerLinkActive="active-link" (click)="cerrarMenu()">Proyectos</a>
+      </li>
+    </ul>
+
+    <div class="nav__spacer">
+      <button class="menu-toggle" (click)="toggleMenu()" [class.is-active]="menuAbierto">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+</nav>

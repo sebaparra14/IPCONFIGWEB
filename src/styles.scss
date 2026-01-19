@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+// Paleta de Colores "Tech-Professional"
+$color-bg: #ffffff;
+$color-dark: #121212;
+$color-accent: #ffdd00; // Amarillo IPCONFIG
+$color-text: #2d2d2d;
+$color-muted: #6c757d;
+
+// Sombras y Bordes
+$shadow-hard: 8px 8px 0px $color-dark;
+$shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+$border-radius: 12px;
+
+// Mixins para responsive rápido
+@mixin mobile { @media (max-width: 768px) { @content; } }
+@mixin tablet { @media (max-width: 1024px) { @content; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }

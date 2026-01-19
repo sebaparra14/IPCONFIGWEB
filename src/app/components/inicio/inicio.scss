@@ -1,0 +1,208 @@
+$amarillo: #ffdd00;
+$negro: #121212;
+$blanco: #ffffff;
+$gris-texto: #555;
+
+.inicio {
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// SECCIÓN CARACTERÍSTICAS
+.features {
+  text-align: center;
+  margin-bottom: 100px;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    span { background: $amarillo; padding: 0 5px; }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+  }
+}
+
+.feature-card {
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: $amarillo;
+  }
+  h3 { font-size: 1.2rem; margin-bottom: 10px; }
+  p { color: $gris-texto; font-size: 0.95rem; line-height: 1.6; }
+}
+
+// SECCIÓN QUIENES SOMOS
+.about-preview {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+
+  &__content {
+    flex: 1;
+    min-width: 300px;
+
+    .subtitle {
+      color: $gris-texto;
+      font-weight: bold;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin: 20px 0;
+      line-height: 1.2;
+    }
+
+    p {
+      color: $gris-texto;
+      margin-bottom: 30px;
+    }
+
+    .btn-more {
+      background: $negro;
+      color: $blanco;
+      padding: 12px 30px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover { background: $amarillo; color: $negro; }
+    }
+  }
+
+  &__image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+
+    .image-wrapper {
+      position: relative;
+      z-index: 1;
+      
+      img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 20px 20px 0px $amarillo; // Efecto de diseño
+      }
+    }
+
+    .decoration-circle {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 100px;
+      height: 100px;
+      border: 5px solid $amarillo;
+      border-radius: 50%;
+      z-index: 0;
+    }
+  }
+}
+$amarillo: #ffdd00;
+$negro: #121212;
+$blanco: #ffffff;
+
+.services-section {
+  padding: 80px 10%;
+  background-color: #f9f9f9; // Un gris muy tenue para diferenciar del blanco
+
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+    
+    .badge {
+      background: $negro;
+      color: $amarillo;
+      padding: 5px 15px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      border-radius: 50px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-top: 15px;
+      span { color: $amarillo; text-shadow: 1px 1px 0 $negro; }
+    }
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: $blanco;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    border-color: $amarillo;
+  }
+
+  &__icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: $negro;
+  }
+
+  &__description {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-grow: 1;
+
+    li {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__btn {
+    background: transparent;
+    border: 2px solid $negro;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: $negro;
+      color: $amarillo;
+    }
+  }
+}
+// RESPONSIVE
+@media (max-width: 768px) {
+  .about-preview { flex-direction: column; text-align: center; }
+  .features__title { font-size: 1.5rem; }
+}

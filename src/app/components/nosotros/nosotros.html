@@ -1,0 +1,35 @@
+<section class="nosotros">
+  <div class="nosotros__main">
+    <div class="content">
+      <h1 class="title">Sobre Nosotros</h1>
+      <p>En <strong>IPCONFIG</strong>, nos dedicamos a brindar soluciones integrales para tus necesidades informáticas. Desde el mantenimiento de computadoras hasta servicios de redes, estamos aquí para ayudarte a optimizar tus sistemas.</p>
+      <p>Nuestro equipo altamente capacitado tiene años de experiencia en el campo de la tecnología. Nos apasiona resolver problemas y ofrecer un servicio excepcional a nuestros clientes.</p>
+      <button class="btn-primary">¡CONTACTAR AHORA!</button>
+    </div>
+    <div class="image-box">
+      <img src="/img/ipconfig2.png" alt="Equipo IPCONFIG">
+    </div>
+  </div>
+
+  <div class="nosotros__cards">
+    <div class="card card--black">
+      <div class="icon">🎯</div>
+      <h3>MISIÓN</h3>
+      <p>Transformar desafíos tecnológicos en soluciones prácticas, siendo un socio confiable para aprovechar al máximo la tecnología.</p>
+    </div>
+    <div class="card card--yellow">
+      <div class="icon">🚀</div>
+      <h3>VISIÓN</h3>
+      <p>Ser líderes en innovación y excelencia, impulsando el éxito de cada uno de nuestros clientes a través de la tecnología.</p>
+    </div>
+  </div>
+
+  <div class="nosotros__stats">
+    @for (stat of stats; track stat.label) {
+      <div class="stat-item">
+        <span class="number">+{{ stat.actual | number:'1.0-0' }}</span>
+        <span class="label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</section>

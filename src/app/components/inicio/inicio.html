@@ -1,0 +1,68 @@
+<section class="inicio">
+  <div class="features">
+    <h2 class="features__title">¿Por qué elegir el soporte técnico de <span>IPCONFIG</span>?</h2>
+
+    <div class="features__grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">🛠️</div>
+        <h3>Experiencia y conocimientos técnicos</h3>
+        <p>Contamos con profesionales capacitados para resolver problemas rápidamente y brindar asesoramiento experto.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">⚡</div>
+        <h3>Respuesta rápida y eficiente</h3>
+        <p>Brindamos soluciones rápidas minimizando el tiempo de inactividad para que su equipo siga funcionando.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">🤝</div>
+        <h3>Atención personalizada a medida</h3>
+        <p>Nos adaptamos a sus necesidades y ofrecemos soluciones específicas para sus desafíos tecnológicos.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-preview">
+    <div class="about-preview__content">
+      <span class="subtitle">QUIENES SOMOS</span>
+      <h2>Nos enfocamos en aportar valor y resolver desafíos a través de soporte técnico.</h2>
+      <p>Nuestro enfoque en la eficiencia tecnológica se traduce en resultados medibles. Generamos un impacto positivo
+        en su productividad y rentabilidad.</p>
+      <button class="btn-more" routerLink="/nosotros">CONOCE MÁS</button>
+    </div>
+
+    <div class="about-preview__image">
+      <div class="image-wrapper">
+        <img src="/img/ipconfig2.png"
+          alt="Soporte IPCONFIG">
+        <div class="decoration-circle"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="services-section">
+  <div class="header">
+    <span class="badge">IPCONFIG SERVICES</span>
+    <h2>Soluciones Tecnológicas <span>a tu alcance</span></h2>
+  </div>
+
+  <div class="services-grid">
+    @for (item of servicios; track item.titulo) {
+    <div class="service-card">
+      <div class="service-card__icon">{{ item.icono }}</div>
+      <h3 class="service-card__title">{{ item.titulo }}</h3>
+      <p class="service-card__description">{{ item.descripcion }}</p>
+
+      <ul class="service-card__list">
+        @for (detalle of item.detalles; track detalle) {
+        <li>✅ {{ detalle }}</li>
+        }
+      </ul>
+
+      <button class="service-card__btn">Saber más</button>
+    </div>
+    }
+  </div>
+</section>
